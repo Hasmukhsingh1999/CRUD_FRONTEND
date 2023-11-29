@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+
 const Update = () => {
   const bookData = {
     title: "",
@@ -29,8 +30,8 @@ const Update = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>ADD new Book</label>
+      <form>
+        <label>Update new Book</label>
         <input
           onChange={handleChange}
           type="text"
@@ -56,7 +57,7 @@ const Update = () => {
           value={book.cover}
         />
       </form>
-      <button></button>
+      <button onChange={handleSubmit}></button>
     </div>
   );
 };

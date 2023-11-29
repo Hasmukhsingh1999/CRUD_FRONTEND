@@ -1,5 +1,5 @@
 import axios from "axios";
-import {  useState } from "react";
+import { useState } from "react";
 
 const Add = () => {
   const bookData = {
@@ -13,7 +13,7 @@ const Add = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios("https://localhost:8800/books", book);
+      const res = await axios.post("https://localhost:8800/books", book);
       console.log(res.data);
       setBook(bookData);
     } catch (error) {
@@ -57,6 +57,7 @@ const Add = () => {
           value={book.cover}
         />
       </form>
+      <button></button>
     </div>
   );
 };

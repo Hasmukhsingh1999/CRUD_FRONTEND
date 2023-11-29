@@ -1,9 +1,21 @@
-
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Books = () => {
-  return (
-    <div>Books</div>
-  )
-}
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/books");
+        console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchAllBooks(2);
+  }, []);
 
-export default Books
+  return <div>Books</div>;
+};
+
+export default Books;
